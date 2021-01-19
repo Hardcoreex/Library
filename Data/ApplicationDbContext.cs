@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Library.Models;
 
 namespace Library.Data
 {
@@ -12,5 +13,6 @@ namespace Library.Data
             : base(options)
         {
         }
+        public DbSet<Library.Models.Books> Books { get; set; }
     }
 }
