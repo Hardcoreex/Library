@@ -12,7 +12,7 @@ namespace Library.Models
 
         [Key]
         public int BookId { get; set; }
-        public int BookName { get; set; }
+        public string BookName { get; set; }
 
         public Books()
         {

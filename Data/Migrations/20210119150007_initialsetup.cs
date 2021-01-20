@@ -13,7 +13,7 @@ namespace Library.Data.Migrations
                     BookId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     AuthorId = table.Column<int>(nullable: false),
-                    BookName = table.Column<int>(nullable: false)
+                    BookName = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
