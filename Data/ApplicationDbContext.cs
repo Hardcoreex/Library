@@ -14,5 +14,6 @@ namespace Library.Data
         {
         }
         public DbSet<Library.Models.Books> Books { get; set; }
+        public DbSet<Library.Models.Authors> Authors { get; set; }
     }
 }
