@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Library.Data;
 using Library.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Library.Controllers
 {
@@ -44,6 +45,7 @@ namespace Library.Controllers
         }
 
         // GET: Orders/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -52,6 +54,7 @@ namespace Library.Controllers
         // POST: Orders/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PatronId,BookId,OrderId,OrderDate,ReturnDate")] Orders orders)
@@ -66,6 +69,7 @@ namespace Library.Controllers
         }
 
         // GET: Orders/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,6 +88,7 @@ namespace Library.Controllers
         // POST: Orders/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("PatronId,BookId,OrderId,OrderDate,ReturnDate")] Orders orders)
@@ -117,6 +122,7 @@ namespace Library.Controllers
         }
 
         // GET: Orders/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,6 +141,7 @@ namespace Library.Controllers
         }
 
         // POST: Orders/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
