@@ -17,5 +17,6 @@ namespace Library.Data
         public DbSet<Library.Models.Authors> Authors { get; set; }
         public DbSet<Library.Models.Orders> Orders { get; set; }
         public DbSet<Library.Models.Patrons> Patrons { get; set; }
+        public DbSet<Library.Models.OrdersDescription> OrdersDescription { get; set; }
     }
 }

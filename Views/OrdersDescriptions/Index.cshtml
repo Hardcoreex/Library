@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Library.Models.OrdersDescription>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Patron.PatronName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Book.BookName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order.OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order.ReturnDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Patron.PatronName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book.BookName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order.ReturnDate)
+            </td>
+            @*<td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>*@
+        </tr>
+        }
+    </tbody>
+</table>
